@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Merriweather", sans-serif;
+    margin: 0;
+    padding-bottom: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #b5c4b8;
+}
+
+h1 {
+    font-size: 3em;
+    font-style: italic;
+    margin: 5rem 0 0;
+    text-align: center;
+    background: -webkit-linear-gradient(to right, #0aa34c 0%, #5b3678 100%);
+    background: -moz-linear-gradient(to right, #0aa34c 0%, #5b3678 100%);
+    background: linear-gradient(to right, #0aa34c 0%, #5b3678 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    color: darkblue;
+}
+
+.cards-container {
+    display: flex;
+    width: 90vw;
+    height: fit-content;
+    background-color: transparent;
+    border: 5px solid rgb(248, 235, 235);
+}
+
+.card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    cursor: pointer;
+    margin: 0.3em;
+    flex: 0.5;
+    height: 65vh;
+    transition: flex 0.6s ease-in-out;
+}
+
+.card h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0.5em;
+    font-size: 1em;
+    opacity: 0;
+}
+
+.card.active {
+    flex: 5;
+}
+
+.card.active h3 {
+    opacity: 0.9;
+    transition: opacity 0.3s ease-in-out 0.4s;
+}
+
+@media screen and (max-width: 400px) {
+    .cards-container {
+        width: 98vw;
+    }
+
+    .card {
+        margin: 0.1em;
+    }
+}
